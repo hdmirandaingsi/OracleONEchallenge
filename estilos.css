@@ -1,0 +1,802 @@
+/* 
+
+    Selector Universal  = *       unicamente el asterisco            
+    Selector etiqueta   = NombreDelSelectorr{}
+    Selector especifico = .NombreDelSelectorr{}   lo importante el punto
+    Pseudo-Selector     = NombreDelSelectorr:NombreDelPseudoSelector
+    pseudo-Elemento     = NombreDelSelectorr::NombreDelPseudoELemento
+
+    
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root {
+    --color-primario: #337ab7; /* Azul oscuro */
+    --color-secundario: #6c757d; /* Gris */
+    --color-terciario: #006b13; /* Verde */
+    --fuente-texto: 'Montserrat', sans-serif;
+    --tamaño-texto: 16px;
+}
+
+#sections2 a {
+    color: aliceblue;
+}
+ 
+
+    #sections2 a:hover {
+        background-color:crimson;
+    }
+
+#sections2 a:active {
+    background-color: red;
+}
+
+#sections2 a:focus {
+    outline: none;
+}
+
+
+
+
+
+html {
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Estilos para el body (Grid) */
+body {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Estilos para el header (Flexbox) */
+#selectoHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-secundario);
+    padding: 10px;
+    grid-column: 1 / span 2;
+    flex-wrap: wrap;
+}
+
+/* Estilos para main section 1 (Flexbox) */
+#sections1 {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-terciario);
+    padding: 20px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para main section 2 (Flexbox) */
+#sections2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    /* Estilos para los botones dentro de #sections2 */
+    #sections2 button {
+        background-color: white;
+        color: var(--color-primario);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: var(--fuente-texto);
+        font-size: var(--tamaño-texto);
+    }
+
+        #sections2 button:hover {
+            background-color: lightgray;
+        }
+
+        #sections2 button:active {
+            background-color: red;
+        }
+
+        #sections2 button:focus {
+            outline: none;
+        }
+
+/* Estilos para aside (Flexbox) - COLUMNA DERECHA */
+#aside1 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+    #aside1 img {
+        max-width: 100%; /* La imagen no superará el ancho del contenedor */
+        height: auto; /* La altura se ajusta automáticamente */
+    }
+
+/* Estilos para el footer (Flexbox) */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 2;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--color-secundario);
+    flex-wrap: wrap;
+}
+
+/* Breakpoints */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    #aside1 {
+        grid-column: 1 / 2;
+        grid-row: 3;
+    }
+
+        #aside1 img {
+            max-width: 50%; /* Reducir la imagen al 50% en pantallas medianas */
+        }
+}
+
+
+@media (max-width: 480px) {
+    #sections2 {
+        flex-direction: column;
+    }
+
+    #aside1 img {
+        display: none; /* Ocultar la imagen en pantallas pequeñas */
+    }
+}
+
+ 
+ 
+/*
+a {
+    color: beige;
+}
+    a:hover {
+        color: #c6ff00;
+    }
+    
+
+body {
+    background-color: #333;
+    color: #ffffff;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100vh; /* imporantes */
+    /*box-sizing: border-box;*/ /* imporantes */
+/*}
+strong {
+    color: #00e8ff;
+    border: 2px solid #00e8ff;
+    padding: 15px;
+}
+
+
+.BodyHeaderNavMenu {
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    background-color: #333;
+    padding: 12px;
+}
+
+.BodyHeaderNavAMenu {
+    text-decoration:from-font;
+    color: #fff;
+    margin-right: 30px;
+}
+
+    .BodyHeaderNavAMenu:hover {
+        color: #fcff00;
+        font-size:20px;
+        scroll-padding-inline:initial;
+        user-select:contain;
+        nav-up:initial;
+    }
+
+
+ 
+input:focus {
+    border-color: blue;
+}
+
+
+
+
+
+.boton {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px 40px;*/ /* Aumenta el padding para hacer el botón más grande */
+    /*border: 5px solid;*/ /* Especifica el ancho y estilo del borde */
+    /*border-color: #ffbb00;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;*/ /* Aumenta el tamaño de la fuente */
+/*}
+
+
+
+    .boton:hover {
+        background-color: #ff00f2;
+    }
+
+    .boton:active {
+        background-color: #ff0000;
+    }
+
+     
+
+.boton:hover::before {
+    transform: scaleX(1);
+}
+
+
+
+
+.contenedorUnidades {
+    font-size: 10px;*/ /* Tamaño de letra del elemento padre */
+    /*line-height: 30px;*/ /* Altura de la línea del elemento padre */
+    /*color: black;
+}
+
+.em {
+    width: 5em;*/ /* 5 veces el tamaño de letra del elemento padre */
+    /*background-color: #f00;
+}
+
+.ex {
+    width: 5ex;*/ /* 5 veces la altura x de la fuente del elemento */
+    /*background-color: #0f0;
+}
+
+.ch {
+    width: 5ch;*/ /* 5 veces la medida de avance del glifo "0" de la letra del elemento */
+    /*background-color: #00f;
+}
+
+.rem {
+    width: 5rem;*/ /* 5 veces el tamaño de la letra del elemento raíz */
+    /*background-color: #ff0;
+}
+
+.lh {
+    width: 5lh;*/ /* 5 veces la altura de la línea del elemento */
+    /*background-color: #0ff;
+}
+
+
+.vw:hover::before {
+    content: "5em";*/ /* Agrega contenido antes del elemento */
+    /*width: 5em;*/ /* 5 veces el tamaño de letra del elemento padre */
+    /*background-color: #f00;
+}
+
+
+.vh:active::after {
+    content: "5ex";*/ /* Agrega contenido después del elemento */
+    /*height: 100vh;*/ /* 5 veces la altura x de la fuente del elemento */
+    /*background-color: #0f0;
+}
+
+.vmin {
+    height: 100vh;*/ /* 20% de la dimensión más pequeña de la ventana gráfica */
+    /*background-color: #0ff;
+}
+
+.vmax {
+    width: 20vmax;*/ /* 20% de la dimensión más grande de la ventana gráfica */
+    /*background-color: #f00;
+}
+
+
+
+
+.boxzising {
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000;
+    padding: 20px;
+    box-sizing:border-box;
+}
+
+.caja1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #f00;
+    padding: 20px;
+    box-sizing: content-box;
+}
+
+.caja2 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #0f0;
+    padding: 20px;
+    box-sizing:border-box;
+}
+
+.caja3 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #00f;
+    padding: 20px;
+    box-sizing: border-box;
+}*/
+
+
+/*aplicando FLEXBOX a un ELEMENTO GENERAL DE HTML (elemento padre) */
+/*.flexbox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:center;
+    justify-content:center;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    order: 1;
+}
+
+
+:root {
+    --color-actualizada-del-proyecto: #eb94bd;
+    --color-primario: #23527c
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1, p, button {
+    margin-bottom: 20px;
+}
+
+.indice {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    background-color: #f2f2f2;
+}
+
+.headerMenu {
+    padding: 8% 0% 0% 6%;
+    display:flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    gap:80px;
+}
+.headerMenuLink {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color:#7800ff
+}
+
+.indice-izquierda {
+    width: 20%;
+    background-color: #ccc;
+    padding: 20px;
+}
+
+.contenido {
+    width: 60%;
+    padding: 20px;
+}
+
+.subindice-derecha {
+    width: 20%;
+    background-color: #ccc;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.indice-izquierda ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;*/
+}
+
+.indice-izquierda li {
+    margin-bottom: 10px;
+}
+
+.indice-izquierda a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+    .indice-izquierda a:hover {
+        color: var(--color-primario);
+    }*/
+
+*/
+ /* display block  */
+/*.block {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+
+.inline {
+    display: inline;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.run-in {
+    display: run-in;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+
+.flow {
+    display: flow;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.flow-root {
+    display: flow-root;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.table {
+    display: table;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.flex {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.grid {
+    display: grid;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.block-flow {
+    display: block flow;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.inline-table {
+    display: inline table;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.list-item {
+    display: list-item;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.list-item-block {
+    display: list-item block;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+.table-row-group {
+    display: table-row-group;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+
+.contents {
+    display: contents;
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+}
+
+
+
+
+
+.containerblock {
+    width: 500px;
+    height: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.textoblock {
+    background-color: #ff0;
+    padding: 10px;
+}
+
+.bloqueblock {
+    display: block;
+    background-color: #0f0;
+    padding: 10px;
+}
+
+.inline3 {
+    display: inline;
+    background-color: #ff0;
+    padding: 5px;
+}
+
+
+
+.titulo44 {
+    display: run-in;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.parrafo44 {
+    font-size: 18px;
+}*/
+
+
+
+/*display flex */
+/*.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.elementflexrow {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    margin: 10px;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.elementoflexcolumn {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    margin: 10px;
+}
+
+
+.flexspace-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.elflexspace-between {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    margin: 10px;
+}
+
+
+.flexcenter {
+    display: flex;
+    justify-content: center;
+}
+
+.elflexcenter {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    margin: 10px;
+}
+
+
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+.elflexwrap {
+    width: 100px;
+    height: 100px;
+    background-color: #337ab7;
+    margin: 10px;
+}
+
+.flexrowwrap {
+    display: flex;
+    flex-flow: row wrap;
+    width: 400px;
+}
+
+.elflexrowwrap {
+    width: 100px;
+    height: 100px;
+    background-color: #e5ff00;
+    margin: 10px;
+}
+
+
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    width: 400px;
+}
+
+.elflex-start {
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    margin: 10px;
+}
+
+
+
+.flexend {
+    display: flex;
+    justify-content: flex-end;
+    width: 400px;
+}
+
+.elflexend {
+    width: 100px;
+    height: 100px;
+    background-color: #ff771c;
+    margin: 10px;
+}
+
+
+
+.unidad-cm {
+    width: 10cm;
+    height: 5cm;
+}
+
+.unidad-mm {
+    font-size: 5mm;
+}
+
+.unidad-in {
+    font-size: 1in;
+}
+
+.unidad-px {
+    width: 200px;
+    height: 150px;
+}
+
+.unidad-pt {
+    font-size: 12pt;
+}
+
+.unidad-pc {
+    width: 5pc;
+    height: 3pc;
+}
+.unidad-em {
+    font-size: 2em;
+}
+
+.unidad-ex {
+    font-size: 2ex;
+}
+
+.unidad-ch {
+    width: 10ch;
+}
+
+.unidad-rem {
+    font-size: 2rem;
+}
+
+.unidad-vw {
+    width: 50vw;
+    height: 30vw;
+}
+
+.unidad-vh {
+    width: 30vh;
+    height: 50vh;
+}
+
+.unidad-vmin {
+    width: 50vmin;
+    height: 30vmin;
+}
+
+.unidad-vmax {
+    width: 30vmax;
+    height: 50vmax;
+}
+
+.unidad-porcentaje {
+    width: 50%;
+    height: 30%;
+}*/
+
+
+/* media queris*/
+/*@media (max-width: 768px) {*/
+    /* Estilos para dispositivos con un ancho máximo de 768px */
+    /*body {
+        background-color: #7d7d7d;
+    }
+}
+
+
+@media (min-width: 1024px) and (orientation: landscape) {*/
+    /* Estilos para dispositivos con un ancho mínimo de 1024px y orientación paisaje */
+    /*body {
+        background-color: #db5f5f;
+    }
+}
+@media (max-width: 350px) {
+    .body {
+        width: auto;
+    }
+}
+
+@media (hover) {*/
+    /* Estilos para dispositivos con capacidad de desplazamiento */
+    /*a {
+        text-decoration:blink;
+    }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {*/
+    /* Estilos para dispositivos con un ancho máximo de 480px y orientación vertical */
+    /*body {
+        font-size: 18px;
+    }
+}
+
+
+@media (color) and (max-width: 580px) and (max-width: 600px) {*/
+    /* Estilos para dispositivos con una pantalla a color y un ancho mínimo de 800px */
+    /*main {
+        background-image: url('https://www.bcie.org/fileadmin/_processed_/8/6/csm_El_Salvador_1._7e99b648ee.png');
+    }
+}*/
